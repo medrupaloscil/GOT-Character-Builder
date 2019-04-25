@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>GoT</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+<body>
+	<!-- Hairs -->
+	<input type="radio" name="hair" id="hair-1" checked>
+	<input type="radio" name="hair" id="hair-2">
+	<input type="radio" name="hair" id="hair-3">
+	<input type="radio" name="hair" id="hair-4">
+	<input type="radio" name="hair" id="hair-5">
+	<input type="radio" name="hair" id="hair-6">
+
+	<!-- Skintone -->
+	<input type="radio" name="skin" id="skin-1" checked>
+	<input type="radio" name="skin" id="skin-2">
+	<input type="radio" name="skin" id="skin-3">
+
+	<!-- Beard -->
+	<input type="radio" name="beard" id="beard-1" checked>
+	<input type="radio" name="beard" id="beard-2">
+	<input type="radio" name="beard" id="beard-3">
+	<input type="radio" name="beard" id="beard-4">
+
+	<!-- Hair Color -->
+	<input type="radio" name="hair-color" id="hair-color-1" checked>
+	<input type="radio" name="hair-color" id="hair-color-2">
+	<input type="radio" name="hair-color" id="hair-color-3">
+	<input type="radio" name="hair-color" id="hair-color-4">
+	<input type="radio" name="hair-color" id="hair-color-5">
+
+	<!-- Clothing -->
+	<input type="radio" name="clothing" id="clothing-1" checked>
+	<input type="radio" name="clothing" id="clothing-2">
+	<input type="radio" name="clothing" id="clothing-3">
+	<input type="radio" name="clothing" id="clothing-4">
+	<input type="radio" name="clothing" id="clothing-5">
+	<input type="radio" name="clothing" id="clothing-6">
+
+
+	<div class="charac-container">
+		<div class="back-hairs"></div>
+		<div class="back-coat"></div>
+		<div class="arm arm-left"></div>
+		<div class="arm arm-right"></div>
+		<div class="leg leg-left"></div>
+		<div class="leg leg-right"></div>
+		<div class="body"></div>
+		<div class="pant"></div>
+		<div class="shirt">
+			<div class="sleeve"></div>
+		</div>
+		<div class="belt"></div>
+		<div class="coat">
+			<div class="fur"></div>
+		</div>
+		<div class="head">
+			<div class="eye"></div>
+			<div class="nose"></div>
+			<div class="mouth"></div>
+			<div class="beard"></div>
+			<div class="front-hairs"></div>
+		</div>
+	</div>
+
+	<div class="controls">
+		<div class="item hair">
+			<div class="item-1">
+				<label for="hair-6"><i class="fa fa-chevron-left"></i></label>
+				<p>Hair 1</p>
+				<label for="hair-2"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-2">
+				<label for="hair-1"><i class="fa fa-chevron-left"></i></label>
+				<p>Hair 2</p>
+				<label for="hair-3"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-3">
+				<label for="hair-2"><i class="fa fa-chevron-left"></i></label>
+				<p>Hair 3</p>
+				<label for="hair-4"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-4">
+				<label for="hair-3"><i class="fa fa-chevron-left"></i></label>
+				<p>Hair 4</p>
+				<label for="hair-5"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-5">
+				<label for="hair-4"><i class="fa fa-chevron-left"></i></label>
+				<p>Hair 5</p>
+				<label for="hair-6"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-6">
+				<label for="hair-5"><i class="fa fa-chevron-left"></i></label>
+				<p>Hair 6</p>
+				<label for="hair-1"><i class="fa fa-chevron-right"></i></label>
+			</div>
+		</div>
+		<div class="item hair-color">
+			<div class="item-1">
+				<label for="hair-color-5"><i class="fa fa-chevron-left"></i></label>
+				<p>Black Hairs</p>
+				<label for="hair-color-2"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-2">
+				<label for="hair-color-1"><i class="fa fa-chevron-left"></i></label>
+				<p>Brown Hairs</p>
+				<label for="hair-color-3"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-3">
+				<label for="hair-color-2"><i class="fa fa-chevron-left"></i></label>
+				<p>Blond Hairs</p>
+				<label for="hair-color-4"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-4">
+				<label for="hair-color-3"><i class="fa fa-chevron-left"></i></label>
+				<p>Light Hairs</p>
+				<label for="hair-color-5"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-5">
+				<label for="hair-color-4"><i class="fa fa-chevron-left"></i></label>
+				<p>White Hairs</p>
+				<label for="hair-color-1"><i class="fa fa-chevron-right"></i></label>
+			</div>
+		</div>
+		<div class="item skin">
+			<div class="item-1">
+				<label for="skin-3"><i class="fa fa-chevron-left"></i></label>
+				<p>Skintone 1</p>
+				<label for="skin-2"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-2">
+				<label for="skin-1"><i class="fa fa-chevron-left"></i></label>
+				<p>Skintone 2</p>
+				<label for="skin-3"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-3">
+				<label for="skin-2"><i class="fa fa-chevron-left"></i></label>
+				<p>Skintone 3</p>
+				<label for="skin-1"><i class="fa fa-chevron-right"></i></label>
+			</div>
+		</div>
+		<div class="item beard">
+			<div class="item-1">
+				<label for="beard-4"><i class="fa fa-chevron-left"></i></label>
+				<p>Beard 1</p>
+				<label for="beard-2"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-2">
+				<label for="beard-1"><i class="fa fa-chevron-left"></i></label>
+				<p>Beard 2</p>
+				<label for="beard-3"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-3">
+				<label for="beard-2"><i class="fa fa-chevron-left"></i></label>
+				<p>Beard 3</p>
+				<label for="beard-4"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-4">
+				<label for="beard-3"><i class="fa fa-chevron-left"></i></label>
+				<p>No beard</p>
+				<label for="beard-1"><i class="fa fa-chevron-right"></i></label>
+			</div>
+		</div>
+		<div class="item clothing">
+			<div class="item-1">
+				<label for="clothing-6"><i class="fa fa-chevron-left"></i></label>
+				<p>Clothing 1</p>
+				<label for="clothing-2"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-2">
+				<label for="clothing-1"><i class="fa fa-chevron-left"></i></label>
+				<p>Clothing 2</p>
+				<label for="clothing-3"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-3">
+				<label for="clothing-2"><i class="fa fa-chevron-left"></i></label>
+				<p>Clothing 3</p>
+				<label for="clothing-4"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-4">
+				<label for="clothing-3"><i class="fa fa-chevron-left"></i></label>
+				<p>Clothing 4</p>
+				<label for="clothing-5"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-5">
+				<label for="clothing-4"><i class="fa fa-chevron-left"></i></label>
+				<p>Clothing 5</p>
+				<label for="clothing-6"><i class="fa fa-chevron-right"></i></label>
+			</div>
+			<div class="item-6">
+				<label for="clothing-5"><i class="fa fa-chevron-left"></i></label>
+				<p>Clothing 6</p>
+				<label for="clothing-1"><i class="fa fa-chevron-right"></i></label>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,938 @@
+body {
+	margin: 0;
+	background-color: #57606f;
+	font-family: sans-serif;
+	--skin-tone: #F3DDD1;
+	--eye-color: #000;
+	--hair-color: #000;
+	--pant-color: #6B6B6B;
+	--shirt-color: #404145;
+	--belt-color: #2C211C;
+}
+input[type="radio"] {
+	display: none;
+}
+
+.charac-container {
+	width: 350px;
+	height: 450px;
+	background-color: #34495e;
+	border: 5px solid #1e272e;
+	margin: 50px auto;
+	position: relative;
+	perspective: 300px;
+}
+.head {
+	position: absolute;
+	width: 200px;
+	height: 140px;
+	background-color: var(--skin-tone);
+	left: 75px;
+	top: 50px;
+	border-radius: 50px 50px 35% 35% / 50px 50px 25% 25%;
+	z-index: 3;
+}
+.head .eye {
+	position: absolute;
+	width: 20px;
+	height: 25px;
+	background-color: var(--eye-color);
+	border-radius: 50%;
+	left: 40px;
+	top: 50px;
+	box-shadow: 100px 0 var(--eye-color);
+	animation: 7s eyes 2s linear infinite;
+}
+.head .nose {
+	position: absolute;
+	width: 16px;
+	height: 5px;
+	border-radius: 50%;
+	border-bottom: 2px solid #666;
+	top: 80px;
+	left: 92px;
+}
+.head .mouth {
+	width: 30px;
+	height: 5px;
+	background-color: #000;
+	border-radius: 5px;
+	position: absolute;
+	bottom: 20px;
+	left: 85px;
+}
+.head .beard {
+	position: absolute;
+	bottom: 18px;
+}
+.body {
+	position: absolute;
+	width: 110px;
+	height: 150px;
+	background-color: var(--skin-tone);
+	border-radius: 30px 30px 0 0;
+	left: 120px;
+	top: 185px;
+	overflow: hidden;
+}
+.arm, .leg {
+	position: absolute;
+	width: 30px;
+	height: 120px;
+	background-color: var(--skin-tone);
+	border-radius: 0 0 15px 15px;
+	top: 200px;
+	transform-origin: top;
+}
+.arm-left {
+	left: 130px;
+	transform: rotate(45deg);
+}
+.arm-right {
+	right: 130px;
+	transform: rotate(-45deg);
+}
+.leg {
+	top: 320px;
+	width: 35px;
+	border-radius: 0 0 20px 20px;
+}
+.leg-left {
+	left: 120px;
+}
+.leg-right {
+	right: 120px;
+}
+
+/* Clothes */
+.pant {
+	position: absolute;
+	width: 114px;
+	left: 118px;
+	top: 310px;
+	background-color: var(--pant-color);
+	height: 30px;
+}
+.pant:before {
+	content: "";
+	position: absolute;
+	background-color: var(--pant-color);
+	width: 39px;
+	height: 75px;
+	top: 28px;
+	box-shadow: 75px 0 var(--pant-color);
+}
+.pant:after {
+	content: "";
+	position: absolute;
+	width: 50px;
+	height: 15px;
+	border: 10px solid;
+	border-color: var(--pant-color) var(--pant-color) transparent var(--pant-color);
+	bottom: -30px;
+	left: 20px;
+	border-radius: 50%;
+}
+.shirt {
+	position: absolute;
+	width: 118px;
+	height: 150px;
+	background-color: var(--shirt-color);
+	border-radius: 30px 30px 0 0;
+	left: 116px;
+	top: 185px;
+}
+.sleeve {
+	position: absolute;
+	width: 34px;
+	height: 80px;
+	background-color: var(--shirt-color);
+	transform-origin: top;
+	top: 27px;
+	transform: rotate(45deg);
+}
+.sleeve:before {
+	content: "";
+	position: absolute;
+	width: 34px;
+	height: 80px;
+	background-color: var(--shirt-color);
+	transform-origin: top;
+	top: -59px;
+	left: 60px;
+	transform: rotate(-90deg);
+}
+.belt {
+	position: absolute;
+	width: 118px;
+	height: 20px;
+	background-color: var(--belt-color);
+	left: 116px;
+	top: 295px;
+}
+
+
+.controls {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 80%;
+	margin: auto;
+}
+.controls .item {
+	width: 200px;
+	margin-bottom: 10px;
+}
+.controls .item > div {
+	display: flex;
+	color: #fff;
+	align-items: center;
+	background-color: #747d8c;/*#2C3A47*/
+	overflow: hidden;
+	border-radius: 3px;
+	display: none;
+}
+.controls .item label {
+	background-color: #2f3542;
+	height: 35px;
+	width: 35px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.controls .item label:hover {
+	opacity: 0.9;
+}
+.controls .item label:active {
+	opacity: 0.8;
+}
+.controls .item p {
+	margin: 0 10px;
+	flex: 1;
+	text-align: center;
+	user-select: none;
+}
+
+/* Hair */
+#hair-1:checked ~ * .hair .item-1 {
+	display: flex;
+}
+#hair-2:checked ~ * .hair .item-2 {
+	display: flex;
+}
+#hair-3:checked ~ * .hair .item-3 {
+	display: flex;
+}
+#hair-4:checked ~ * .hair .item-4 {
+	display: flex;
+}
+#hair-5:checked ~ * .hair .item-5 {
+	display: flex;
+}
+#hair-6:checked ~ * .hair .item-6 {
+	display: flex;
+}
+#hair-1:checked ~ .charac-container .back-hairs {
+	position: absolute;
+	width: 220px;
+	height: 140px;
+	background-color: var(--hair-color);
+	left: 65px;
+	top: 40px;
+	border-radius: 50px 50px 10px 10px;
+}
+#hair-1:checked ~ .charac-container .back-hairs:after {
+	content: "";
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background-color: var(--hair-color);
+	border-radius: 50%;
+	top: 90px;
+	left: -10px;
+	box-shadow: 
+		20px -1px var(--hair-color),
+		2px -20px var(--hair-color),
+		0 -42px var(--hair-color),
+		3px -70px var(--hair-color),
+		7px -80px var(--hair-color),
+		175px 0 var(--hair-color),
+		176px -20px var(--hair-color),
+		175px -42px var(--hair-color),
+		171px -70px var(--hair-color),
+		20px -93px var(--hair-color),
+		50px -92px var(--hair-color),
+		80px -93px var(--hair-color),
+		120px -94px var(--hair-color),
+		140px -92px var(--hair-color),
+		100px -94px var(--hair-color);
+}
+#hair-1:checked ~ .charac-container .head .front-hairs {
+	position: absolute;
+	width: 100px;
+	height: 30px;
+	background-color: var(--hair-color);
+	border-radius: 50%;
+	right: 7px;
+	top: -10px;
+	box-shadow: -40px 0 var(--hair-color), -90px 10px 0 5px var(--hair-color);
+}
+#hair-1:checked ~ .charac-container .head .front-hairs:before {
+	content: "";
+	position: absolute;
+	width: 70px;
+	height: 30px;
+	background-color: var(--hair-color);
+	border-radius: 50%;
+	left: -120px;
+	top: 35px;
+	transform: rotate(-60deg);
+}
+#hair-1:checked ~ .charac-container .head .front-hairs:after {
+	content: "";
+	position: absolute;
+	width: 80px;
+	height: 25px;
+	background-color: var(--hair-color);
+	border-radius: 50%;
+	right: -40px;
+	top: 35px;
+	transform: rotate(70deg);
+}
+#hair-2:checked ~ .charac-container .back-hairs {
+	position: absolute;
+	width: 210px;
+	height: 100px;
+	background-color: var(--hair-color);
+	left: 70px;
+	top: 40px;
+	border-radius: 60px 60px 10px 10px;
+}
+#hair-2:checked ~ .charac-container .head .front-hairs {
+	position: absolute;
+    width: 160px;
+    height: 10px;
+    left: 20px;
+    background-color: var(--hair-color);
+    border-radius: 120px 120px 0 0;
+}
+#hair-2:checked ~ .charac-container .head .front-hairs:before {
+	content: "";
+	position: absolute;
+	width: 160px;
+    height: 20px;
+	background-color: var(--hair-color);
+	border-radius: 50%;
+}
+#hair-3:checked ~ .charac-container .back-hairs {
+	position: absolute;
+	width: 206px;
+	height: 70px;
+	background-color: var(--hair-color);
+	left: 72px;
+	top: 45px;
+	border-radius: 60px 60px 10px 10px;
+}
+#hair-4:checked ~ .charac-container .back-hairs {
+	position: absolute;
+	width: 210px;
+	height: 230px;
+	background-color: var(--hair-color);
+	left: 70px;
+	top: 40px;
+	border-radius: 60px 60px 0 0;
+}
+#hair-4:checked ~ .charac-container .back-hairs:before {
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 60px;
+	background-color: var(--hair-color);
+	border-radius: 50%;
+	left: -4px;
+	top: 175px;
+	box-shadow:
+		0 -40px var(--hair-color),
+		0 -85px var(--hair-color),
+		0 -110px var(--hair-color),
+		3px -140px var(--hair-color),
+		203px 0 var(--hair-color),
+		203px -40px var(--hair-color),
+		203px -85px var(--hair-color),
+		203px -110px var(--hair-color),
+		200px -140px var(--hair-color);
+}
+#hair-4:checked ~ .charac-container .back-hairs:after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background-color: var(--hair-color);
+	bottom: -9px;
+	border-radius: 50%;
+	box-shadow:
+		20px 0 var(--hair-color),
+		40px 0 var(--hair-color),
+		60px 0 var(--hair-color),
+		80px 0 var(--hair-color),
+		110px 0 var(--hair-color),
+		130px 0 var(--hair-color),
+		150px 0 var(--hair-color),
+		170px 0 var(--hair-color),
+		190px 0 var(--hair-color);
+}
+#hair-4:checked ~ .charac-container .head .front-hairs:before {
+	content: "";
+    position: absolute;
+    width: 130px;
+    height: 50px;
+    background-color: var(--hair-color);
+    border-radius: 50%;
+    top: -6px;
+    transform: rotate(-10deg);
+}
+#hair-4:checked ~ .charac-container .head .front-hairs:after {
+	content: "";
+    position: absolute;
+	width: 90px;
+    height: 40px;
+    background-color: var(--hair-color);
+    border-radius: 50%;
+    right: -2px;
+    top: -4px;
+    transform: rotate(20deg);
+}
+#hair-5:checked ~ .charac-container .back-hairs {
+	position: absolute;
+	width: 210px;
+	height: 130px;
+	background-color: var(--hair-color);
+	left: 70px;
+	top: 40px;
+	border-radius: 60px 60px 30px 30px;
+}
+#hair-5:checked ~ .charac-container .head .front-hairs {
+	position: absolute;
+    width: 200px;
+    height: 35px;
+    background-color: var(--hair-color);
+    border-radius: 400px 400px 60% 60% / 300px 300px 90% 90%;
+}
+#hair-5:checked ~ .charac-container .head .front-hairs:before {
+	content: "";
+	position: absolute;
+    width: 30px;
+    height: 18px;
+    background-color: var(--hair-color);
+    border-radius: 50%;
+    top: 28px;
+    left: -1px;
+    transform: skewX(40deg);
+    box-shadow:
+    	30px 0 var(--hair-color),
+    	60px 0 var(--hair-color),
+    	90px 0 var(--hair-color),
+    	120px 0 var(--hair-color),
+    	150px 0 var(--hair-color),
+    	173px 0 var(--hair-color);
+}
+#hair-5:checked ~ .charac-container .head .front-hairs:after {
+	content: "";
+	position: absolute;
+    width: 20px;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 50%;
+    top: 15px;
+    left: 3px;
+    box-shadow:
+    	18px 0 #eee,
+    	36px 0 #eee,
+    	54px 0 #eee,
+    	72px 0 #eee,
+    	90px 0 #eee,
+    	108px 0 #eee,
+    	126px 0 #eee,
+    	144px 0 #eee,
+    	162px 0 #eee,
+    	177px 0 #eee;
+}
+#hair-6:checked ~ .charac-container .back-hairs {
+	position: absolute;
+	width: 220px;
+	height: 130px;
+	background-color: var(--hair-color);
+	left: 65px;
+	top: 40px;
+	border-radius: 60px 60px 30px 30px;
+}
+#hair-6:checked ~ .charac-container .front-hairs {
+	position: absolute;
+	height: 30px;
+	width: 150px;
+    left: 50px;
+	background-color: var(--hair-color);
+	border-radius: 25px;
+}
+#hair-6:checked ~ .charac-container .head {
+	overflow: hidden;
+}
+#hair-6:checked ~ .charac-container .front-hairs:before {
+	content: "";
+	position: absolute;
+    height: 50px;
+    width: 34px;
+    border: solid;
+    border-width: 10px 3px 0 30px;
+    border-color: var(--hair-color) var(--hair-color) transparent transparent;
+    border-radius: 30px;
+    left: 70px;
+    top: 20px;
+}
+
+#hair-6:checked ~ .charac-container .front-hairs:after {
+	content: "";
+	position: absolute;
+    height: 100px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: var(--hair-color);
+    transform: rotate(40deg);
+    left: -50px;
+    top: -20px;
+}
+
+
+/* Skin */
+#skin-1:checked ~ * .skin .item-1 {
+	display: flex;
+}
+#skin-2:checked ~ * .skin .item-2 {
+	display: flex;
+}
+#skin-3:checked ~ * .skin .item-3 {
+	display: flex;
+}
+#skin-2:checked ~ .charac-container {
+	--skin-tone: #D2A48A;
+}
+#skin-2:checked ~ .charac-container .body:before {
+	content: "";
+	position: absolute;
+	width: 30px;
+    height: 20px;
+    background-color: #48494C;
+    transform: rotate(35deg) skewX(80deg);
+    left: -30px;
+    top: -30px;
+    box-shadow: 47px -8px #48494C, -48px 6px #48494C;
+
+}
+#skin-2:checked ~ .charac-container .body:after {
+	content: "";
+	position: absolute;
+	width: 30px;
+    height: 20px;
+    background-color: #48494C;
+    transform: rotate(-35deg) skewX(-80deg);
+    right: -30px;
+    top: -30px;
+    box-shadow: -47px -8px #48494C, 48px 6px #48494C;
+
+}
+#skin-3:checked ~ .charac-container {
+	--skin-tone: #82B9D8;
+	--eye-color: #147CC0;
+}
+
+/* Beard */
+#beard-1:checked ~ * .beard .item-1 {
+	display: flex;
+}
+#beard-2:checked ~ * .beard .item-2 {
+	display: flex;
+}
+#beard-3:checked ~ * .beard .item-3 {
+	display: flex;
+}
+#beard-4:checked ~ * .beard .item-4 {
+	display: flex;
+}
+#beard-1:checked ~ .charac-container .head {
+	box-shadow: inset 0 -10px var(--hair-color);
+}
+#beard-1:checked ~ .charac-container .head .beard {
+	border: solid var(--hair-color);
+	border-width: 7px 7px 0 0;
+	height: 20px;
+	width: 22px;
+	border-radius: 3px;
+	transform: rotate(-32deg) skewX(30deg);
+	left: 85px;
+}
+#beard-1:checked ~ .charac-container .head .beard:after {
+	content: "";
+	height: 15px;
+    width: 10px;
+    border-radius: 10px;
+    background-color: var(--hair-color);
+    position: absolute;
+    bottom: -13px;
+    left: -13px;
+	transform: skewX(-30deg) rotate(32deg);
+}
+#beard-2:checked ~ .charac-container .head {
+	box-shadow: inset 0 -15px var(--hair-color);
+}
+#beard-2:checked ~ .charac-container .head .beard {
+	border: 8px solid var(--hair-color);
+	bottom: 5px;
+	height: 18px;
+	width: 40px;
+	border-radius: 10px;
+	left: 72px;
+}
+#beard-2:checked ~ .charac-container .head .beard:after {
+	content: "";
+	height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: var(--hair-color);
+    position: absolute;
+    bottom: -60px;
+    left: 15px;
+    box-shadow: 0 -15px 0 5px var(--hair-color), 0 -35px 0 10px var(--hair-color);
+}
+#beard-3:checked ~ .charac-container .head {
+	box-shadow: inset 0 -18px var(--hair-color);
+}
+
+/* Hair Color */
+#hair-color-1:checked ~ * .hair-color .item-1 {
+	display: flex;
+}
+#hair-color-2:checked ~ * .hair-color .item-2 {
+	display: flex;
+}
+#hair-color-3:checked ~ * .hair-color .item-3 {
+	display: flex;
+}
+#hair-color-4:checked ~ * .hair-color .item-4 {
+	display: flex;
+}
+#hair-color-5:checked ~ * .hair-color .item-5 {
+	display: flex;
+}
+#hair-color-2:checked ~ .charac-container {
+	--hair-color: #21110c;
+}
+#hair-color-3:checked ~ .charac-container {
+	--hair-color: #C7B572;
+}
+#hair-color-4:checked ~ .charac-container {
+	--hair-color: #FBFCEA;
+}
+#hair-color-5:checked ~ .charac-container {
+	--hair-color: #fff;
+}
+
+/* Clothing */
+#clothing-1:checked ~ * .clothing .item-1 {
+	display: flex;
+}
+#clothing-2:checked ~ * .clothing .item-2 {
+	display: flex;
+}
+#clothing-3:checked ~ * .clothing .item-3 {
+	display: flex;
+}
+#clothing-4:checked ~ * .clothing .item-4 {
+	display: flex;
+}
+#clothing-5:checked ~ * .clothing .item-5 {
+	display: flex;
+}
+#clothing-6:checked ~ * .clothing .item-6 {
+	display: flex;
+}
+#clothing-1:checked ~ .charac-container .belt:before {
+	content: "";
+	position: absolute;
+	width: 150px;
+	height: 15px;
+	left: -20px;
+	top: -52px;
+	background-color: var(--belt-color);
+	transform: rotate(45deg);
+}
+#clothing-1:checked ~ .charac-container .belt:after {
+	content: "";
+	position: absolute;
+	width: 150px;
+	height: 15px;
+	right: -20px;
+	top: -52px;
+	background-color: var(--belt-color);
+	transform: rotate(-45deg);
+}
+#clothing-1:checked ~ .charac-container .sleeve, #clothing-1:checked ~ .charac-container .arm {
+	display: none;
+}
+#clothing-1:checked ~ .charac-container .back-coat {
+	position: absolute;
+	width: 110px;
+	height: 220px;
+	background-color: #000;
+	left: 122px;
+	top: 200px;
+}
+#clothing-1:checked ~ .charac-container .coat {
+	position: absolute;
+	width: 60px;
+	height: 240px;
+	background-color: #0E0E0E;
+	left: 90px;
+	top: 180px;
+	border-radius: 50px 0 0 5px;
+}
+#clothing-1:checked ~ .charac-container .coat:before {
+	content: "";
+	position: absolute;
+	width: 60px;
+	height: 240px;
+	background-color: #0E0E0E;
+	left: 110px;
+	border-radius: 0 50px 5px 0;
+}
+#clothing-1:checked ~ .charac-container .coat:after {
+	content: "";
+	position: absolute;
+	width: 80px;
+	height: 50px;
+	border-radius: 30px;
+	background-color: #CAC7B4;
+	left: -10px;
+	box-shadow: 110px 0 #CAC7B4;
+}
+#clothing-2:checked ~ .charac-container {
+	--shirt-color: #5C473B;
+	--pant-color: #808186;
+}
+#clothing-2:checked ~ .charac-container .shirt, #clothing-3:checked ~ .charac-container .shirt {
+	background-color: transparent;
+}
+#clothing-2:checked ~ .charac-container .sleeve, #clothing-3:checked ~ .charac-container .sleeve {
+	height: 30px;
+	top: 57px;
+	top: 67px;
+    left: -40px;
+}
+#clothing-2:checked ~ .charac-container .sleeve:before, #clothing-3:checked ~ .charac-container .sleeve:before {
+	height: 30px;
+	top: -116px;
+    left: 116px;
+}
+#clothing-2:checked ~ .charac-container .pant:before, #clothing-4:checked ~ .charac-container .pant:before {
+	box-shadow: none;
+	transform: skewX(-5deg);
+	left: -4px;
+    top: 15px;
+    width: 80px;
+    height: 85px;
+}
+#clothing-2:checked ~ .charac-container .pant:after, #clothing-4:checked ~ .charac-container .pant:after {
+	all: initial;
+	content: "";
+    position: absolute;
+    background-color: var(--pant-color);
+    width: 80px;
+    height: 85px;
+    right: -4px;
+    top: 15px;
+    transform: skewX(5deg);
+}
+#clothing-3:checked ~ .charac-container {
+	--shirt-color: #68646A;
+	--pant-color: #68646A;
+}
+#clothing-3:checked ~ .charac-container .pant {
+	height: 60px;
+}
+#clothing-3:checked ~ .charac-container .pant:before {
+	height: 20px;
+	top: 90px;
+}
+#clothing-3:checked ~ .charac-container .pant:after {
+	all: initial;
+	content: "";
+	position: absolute;
+	width: 15px;
+	height: 15px;
+	background-color: var(--pant-color);
+	bottom: -14px;
+	box-shadow:
+		20px 0 var(--pant-color),
+		40px 0 var(--pant-color),
+		60px 0 var(--pant-color),
+		80px 0 var(--pant-color),
+		99px 0 var(--pant-color);
+}
+#clothing-4:checked ~ .charac-container {
+	--shirt-color: #1A1A1A;
+	--pant-color: #1A1A1A;
+}
+#clothing-4:checked ~ .charac-container .pant:before {
+	left: -4px;
+}
+#clothing-4:checked ~ .charac-container .pant:after {
+    right: -4px;
+}
+#clothing-4:checked ~ .charac-container .belt {
+	width: 114px;
+	left: 118px;
+	height: 15px;
+	top: 300px;
+}
+#clothing-4:checked ~ .charac-container .shirt {
+	transform: rotateX(335deg);
+}
+#clothing-4:checked ~ .charac-container .shirt:after {
+	all: initial;
+	content: "";
+	position: absolute;
+	width: 0;
+	height: 0;
+	border: solid;
+    border-width: 30px 20px 0 20px;
+    border-color: var(--skin-tone) transparent transparent;
+    left: 36px;
+    z-index: 2;
+}
+#clothing-5:checked ~ .charac-container {
+	--shirt-color: #E0CFBE;
+	--pant-color: #E0CFBE;
+}
+#clothing-5:checked ~ .charac-container .shirt {
+	border-radius: 0;
+    height: 70px;
+    top: 250px;
+    width: 112px;
+    left: 119px;
+    transform: rotateX(-10deg);
+}
+#clothing-5:checked ~ .charac-container .shirt:before {
+	content: "";
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	background-color: var(--shirt-color);
+	border-radius: 50%;
+	top: -25px;
+	box-shadow: 52px 0 var(--shirt-color);
+    z-index: 1;
+}
+#clothing-5:checked ~ .charac-container .belt {
+	display: none;
+}
+#clothing-5:checked ~ .charac-container .pant {
+	width: 116px;
+    left: 117px;
+    height: 100px;
+    transform: rotateX(20deg);
+}
+#clothing-5:checked ~ .charac-container .pant:before, #clothing-5:checked ~ .charac-container .pant:after {
+	all: initial;
+	content: "";
+	position: absolute;
+	width: 5px;
+	background-color: var(--shirt-color);
+	height: 100px;
+	top: -154px;
+    transform: rotateX(-20deg) rotate(15deg);
+    left: 7px;
+}
+#clothing-5:checked ~ .charac-container .pant:after {
+	left: 100px;
+    transform: rotate(-20deg);
+}
+#clothing-5:checked ~ .charac-container .sleeve {
+	top: -20px;
+	left: -20px;
+	height: 15px;
+	background-color: #767171;
+}
+#clothing-5:checked ~ .charac-container .sleeve:before {
+	height: 15px;
+	top: -84px;
+    left: 87px;
+    background-color: #767171;
+}
+#clothing-6:checked ~ .charac-container {
+	--shirt-color: #5A4942;
+	--pant-color: #53585B;
+}
+#clothing-6:checked ~ .charac-container .belt {
+	background-color: #764D27;
+}
+#clothing-6:checked ~ .charac-container .belt:before {
+	content: "";
+	position: absolute;
+	height: calc(100% - 4px);
+	width: 25px;
+	border-radius: 3px;
+	border: 5px solid #D8B861;
+	top: -3px;
+	left: 20px;
+}
+
+/* Names */
+.charac-container:after {
+	position: absolute;
+	width: 60%;
+	left: 20%;
+	border: 5px solid #1e272e;
+	background-color: #fff;
+	top: -20px;
+	text-align: center;
+	line-height: 30px;
+	font-weight: bold;
+	display: none;
+}
+#hair-1:checked ~ #skin-1:checked ~ #beard-1:checked ~ #hair-color-1:checked ~ #clothing-1:checked ~ .charac-container:after {
+	content: "Jon Snow";
+	display: block;
+}
+#hair-1:checked ~ #skin-3:checked ~ #beard-1:checked ~ #hair-color-5:checked ~ #clothing-1:checked ~ .charac-container:after {
+	content: "OH NO, JON !!!!";
+	display: block;
+}
+#hair-2:checked ~ #skin-1:checked ~ #beard-1:checked ~ #hair-color-1:checked ~ #clothing-1:checked ~ .charac-container:after {
+	content: "Samwell Tarly";
+	display: block;
+}
+#hair-3:checked ~ #skin-2:checked ~ #beard-2:checked ~ #hair-color-1:checked ~ #clothing-2:checked ~ .charac-container:after {
+	content: "Khal Drogo";
+	display: block;
+}
+#hair-3:checked ~ #skin-3:checked ~ #beard-3:checked ~ #hair-color-5:checked ~ #clothing-3:checked ~ .charac-container:after {
+	content: "White Walker";
+	display: block;
+}
+#hair-5:checked ~ #skin-1:checked ~ #beard-4:checked ~ #hair-color-3:checked ~ #clothing-4:checked ~ .charac-container:after {
+	content: "Cercei Lannister";
+	display: block;
+}
+#hair-4:checked ~ #skin-1:checked ~ #beard-4:checked ~ #hair-color-4:checked ~ #clothing-5:checked ~ .charac-container:after {
+	content: "Daenerys Targaryen";
+	display: block;
+}
+#hair-6:checked ~ #skin-1:checked ~ #beard-4:checked ~ #hair-color-2:checked ~ #clothing-6:checked ~ .charac-container:after {
+	content: "Arya Stark";
+	display: block;
+}
+
+@keyframes eyes {
+	2% {height: 11px;top: 57px;}
+	4% {height: 25px;top: 50px;}
+}
